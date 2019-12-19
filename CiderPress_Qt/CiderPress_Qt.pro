@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    ciderpress_gui.cpp
+    ciderpress_gui.cpp \
+    xml_manager.cpp
 
 HEADERS += \
-    ciderpress_gui.h
+    ciderpress_gui.h \
+    xml_manager.h
 
 FORMS += \
     ciderpress_gui.ui
