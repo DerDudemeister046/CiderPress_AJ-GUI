@@ -14,6 +14,8 @@
 #include <QtXml>            // xml implementation
 #include <QDomDocument>     // to handle xml documents
 
+#include <QDebug>
+
 class XML_Manager
 {
 public:
@@ -30,6 +32,8 @@ public:
     void setFilename(QString filename); // set name of file to be read/writen from/to
     // Class functions
     void test();    // Testing function to be deleted in final version
+
+    bool initialize();  // initialization of XML_Manager, sets values, checks file availability
     // Checker functions
 private:
     QDomDocument document;  // xml document handle

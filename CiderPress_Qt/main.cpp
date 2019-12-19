@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     //w.show();
 
     XML_Manager *xml = new XML_Manager;
+    xml->test();
 
     return a.exec();
 }
