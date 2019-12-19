@@ -46,10 +46,22 @@ void XML_Manager::test()
     QDomElement tag = doc.createElement("ajcore");
     root.appendChild(tag);
 
+    QDomElement tag2 = doc.createElement("folders");
+    root.appendChild(tag2);
+
+    QDomElement tag3 = doc.createElement("connection");
+    tag2.appendChild(tag3);
+
     QDomText t = doc.createTextNode("Test Text");
     tag.appendChild(t);
+    tag2.appendChild(t);
+    tag3.appendChild(t);
+
+
+
 
     QString xml = doc.toString();
     qDebug() << "XML: " << xml;
+
 
 }
