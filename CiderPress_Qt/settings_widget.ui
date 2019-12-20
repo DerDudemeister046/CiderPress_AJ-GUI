@@ -225,6 +225,7 @@
   <tabstop>finished_down_le</tabstop>
   <tabstop>browse_finish_btn</tabstop>
   <tabstop>upload_le</tabstop>
+  <tabstop>browse_upload_btn</tabstop>
   <tabstop>ok_btn</tabstop>
   <tabstop>cancel_btn</tabstop>
  </tabstops>
