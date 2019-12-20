@@ -7,7 +7,7 @@ CiderPress_Gui::CiderPress_Gui(QWidget *parent)
 {
     ui->setupUi(this);
     settings = new Settings_Widget;
-    setCentralWidget(settings);
+    //setCentralWidget(settings);
 }
 
 CiderPress_Gui::~CiderPress_Gui()
