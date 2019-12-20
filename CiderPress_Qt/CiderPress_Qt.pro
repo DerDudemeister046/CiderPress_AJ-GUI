@@ -18,14 +18,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     ciderpress_gui.cpp \
+    settings_widget.cpp \
     xml_manager.cpp
 
 HEADERS += \
     ciderpress_gui.h \
+    settings_widget.h \
     xml_manager.h
 
 FORMS += \
-    ciderpress_gui.ui
+    ciderpress_gui.ui \
+    settings_widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
