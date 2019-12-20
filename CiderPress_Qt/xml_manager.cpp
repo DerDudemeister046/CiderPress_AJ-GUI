@@ -106,3 +106,19 @@ void XML_Manager::createChild(QDomDocument document, QDomElement root, QString c
     }
     root.appendChild(child);
 }
+
+QString XML_Manager::readChild(QDomElement root, QString tag, QString attribute)
+{
+    QDomNodeList items = root.elementsByTagName(tag);
+    QString element = "";
+    for (int i = 0; i < items.count(); i++)
+    {
+        QDomNode itemnode = items.at(i);
+        if (itemnode.isElement())
+        {
+            QDomElement item = itemnode.toElement();
+            element = item.attribute(attribute);
+        }
+    }
+    return element;
+}
