@@ -2,6 +2,7 @@
 #define CIDERPRESS_GUI_H
 
 #include <QMainWindow>
+#include <QMdiSubWindow>
 
 #include "settings_widget.h"
 
