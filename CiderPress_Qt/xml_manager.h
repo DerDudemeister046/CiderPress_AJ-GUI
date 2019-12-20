@@ -33,11 +33,13 @@ public:
     // Class functions
     void test();    // Testing function to be deleted in final version
 
+    void createChild(QDomDocument document, QDomElement root, QString childname, QStringList attributes, QStringList values); // creates a child node to be appended to the document
+
     bool initialize();  // initialization of XML_Manager, sets values, checks file availability
     // Checker functions
 private:
-    QDomDocument document;  // xml document handle
-    QDomElement root;       // root element of document
+    QDomDocument *document;  // xml document handle
+    QDomElement *root;       // root element of document
     QString filename;       // name of the file to be read or written to.
 };
 

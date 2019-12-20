@@ -2,7 +2,8 @@
 
 XML_Manager::XML_Manager()
 {
-
+    document = new QDomDocument;
+    root = new QDomElement;
 }
 
 XML_Manager::~XML_Manager()
@@ -12,12 +13,32 @@ XML_Manager::~XML_Manager()
 
 // GET
 
+QDomDocument XML_Manager::getDocument()
+{
+    return *document;
+}
+
+QDomElement XML_Manager::getRoot()
+{
+    return *root;
+}
+
 QString XML_Manager::getFilename()
 {
     return filename;
 }
 
 // SET
+
+void XML_Manager::setDocument(QDomDocument document)
+{
+    this->document = &document;
+}
+
+void XML_Manager::setRoot(QDomElement root)
+{
+    this->root = &root;
+}
 
 void XML_Manager::setFilename(QString filename)
 {
@@ -36,11 +57,31 @@ bool XML_Manager::initialize()
 void XML_Manager::test()
 {    
     qDebug() << "Create Document";
-    setFilename("test.xml");
+    setFilename("settings.xml");
     QDomDocument doc(getFilename());
     QFile file(getFilename());
+    QDomElement r = doc.createElement("settings");
+    doc.appendChild(r);
+    //getRoot() = getDocument().createElement("settings");
+    //qDebug() << "APPEND ROOT: ";
+    //getDocument().appendChild(getRoot());
 
-    root = doc.createElement("settings");
+
+    QStringList a = {"host","port","password"};
+    QStringList b = {"192.168.0.2", "9851", "PASSWORD"};
+
+    createChild(doc, r, "ajcore", a, b);
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "ERROR: Cant open file!";
+    }
+    QTextStream out(&file);
+    QString xml = doc.toString();
+    out << xml;
+    qDebug() << "Settings file created";
+    /*
+
     doc.appendChild(root);
 
     QDomElement tag = doc.createElement("ajcore");
@@ -57,11 +98,24 @@ void XML_Manager::test()
     tag2.appendChild(t);
     tag3.appendChild(t);
 
+    file.setFileName(getFilename());
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        qDebug() << "ERROR: Cant open file!";
+    }
 
+    */
 
+}
 
-    QString xml = doc.toString();
-    qDebug() << "XML: " << xml;
+// Class Functions
 
-
+void XML_Manager::createChild(QDomDocument document, QDomElement root, QString childname, QStringList attributes, QStringList values)
+{
+    QDomElement child = document.createElement(childname);
+    for (int i=0; i<attributes.size(); i++)
+    {
+        child.setAttribute(attributes.at(i), values.at(i));
+    }
+    root.appendChild(child);
 }
