@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Settings_Widget</class>
+ <widget class="QWidget" name="Settings_Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>377</width>
+    <height>359</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Einstellungen</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0" colspan="4">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="4">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>AJ-Core Einstellungen</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3">
+      <item row="1" column="0">
+       <widget class="QLabel" name="host_lbl">
+        <property name="text">
+         <string>Host:</string>
+        </property>
+        <property name="buddy">
+         <cstring>host_le</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="host_le">
+        <property name="placeholderText">
+         <string>z.B. &quot;localhost&quot; oder &quot;192.168.0.x&quot;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="port_lbl">
+        <property name="text">
+         <string>Port:</string>
+        </property>
+        <property name="buddy">
+         <cstring>port_le</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="port_le">
+        <property name="placeholderText">
+         <string>Standard: 9851</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="pwd_lbl">
+        <property name="text">
+         <string>Passwort:</string>
+        </property>
+        <property name="buddy">
+         <cstring>pwd_le</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="pwd_le">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="QPushButton" name="cancel_btn">
+     <property name="text">
+      <string>Abbrechen</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QPushButton" name="ok_btn">
+     <property name="text">
+      <string>Ok</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="4">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Verzeichnisse</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Downloads</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="finished_down_le">
+           <property name="placeholderText">
+            <string>&quot;C:\applejuice\&quot;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="browse_finish_btn">
+           <property name="text">
+            <string>Durchsuchen</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="temp_down_le">
+           <property name="placeholderText">
+            <string>&quot;C:\applejuice\temp&quot;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="finished_down_lbl">
+           <property name="text">
+            <string>Fertiggestellt:</string>
+           </property>
+           <property name="buddy">
+            <cstring>finished_down_le</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="browse_temp_btn">
+           <property name="text">
+            <string>Durchsuchen</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="temp_down_lbl">
+           <property name="text">
+            <string>Temporär:</string>
+           </property>
+           <property name="buddy">
+            <cstring>temp_down_le</cstring>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Uploads</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="upload_lbl">
+           <property name="text">
+            <string>Upload Verzeichnis:</string>
+           </property>
+           <property name="buddy">
+            <cstring>upload_le</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="upload_le">
+           <property name="placeholderText">
+            <string>&quot;C:\applejuice\&quot;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="browse_upload_btn">
+           <property name="text">
+            <string>Durchsuchen</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="4">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>host_le</tabstop>
+  <tabstop>port_le</tabstop>
+  <tabstop>pwd_le</tabstop>
+  <tabstop>temp_down_le</tabstop>
+  <tabstop>browse_temp_btn</tabstop>
+  <tabstop>finished_down_le</tabstop>
+  <tabstop>browse_finish_btn</tabstop>
+  <tabstop>upload_le</tabstop>
+  <tabstop>browse_upload_btn</tabstop>
+  <tabstop>ok_btn</tabstop>
+  <tabstop>cancel_btn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

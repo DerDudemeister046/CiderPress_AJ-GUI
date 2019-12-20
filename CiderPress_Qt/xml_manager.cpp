@@ -2,8 +2,6 @@
 
 XML_Manager::XML_Manager()
 {
-    document = new QDomDocument;
-    root = new QDomElement;
 }
 
 XML_Manager::~XML_Manager()
@@ -12,37 +10,25 @@ XML_Manager::~XML_Manager()
 }
 
 // GET
-
-QDomDocument XML_Manager::getDocument()
-{
-    return *document;
-}
-
-QDomElement XML_Manager::getRoot()
-{
-    return *root;
-}
-
 QString XML_Manager::getFilename()
 {
     return filename;
 }
 
+QString XML_Manager::getRootElement()
+{
+    return rootElement;
+}
+
 // SET
-
-void XML_Manager::setDocument(QDomDocument document)
-{
-    this->document = &document;
-}
-
-void XML_Manager::setRoot(QDomElement root)
-{
-    this->root = &root;
-}
-
 void XML_Manager::setFilename(QString filename)
 {
     this->filename = filename;
+}
+
+void XML_Manager::setRootElement(QString rootElement)
+{
+    this->rootElement = rootElement;
 }
 
 // Class functions
@@ -56,6 +42,7 @@ bool XML_Manager::initialize()
 // Testing functions
 void XML_Manager::test()
 {    
+    /*
     qDebug() << "Create Document";
     setFilename("settings.xml");
     QDomDocument doc(getFilename());
@@ -80,7 +67,7 @@ void XML_Manager::test()
     QString xml = doc.toString();
     out << xml;
     qDebug() << "Settings file created";
-    /*
+
 
     doc.appendChild(root);
 
@@ -118,4 +105,20 @@ void XML_Manager::createChild(QDomDocument document, QDomElement root, QString c
         child.setAttribute(attributes.at(i), values.at(i));
     }
     root.appendChild(child);
+}
+
+QString XML_Manager::readChild(QDomElement root, QString tag, QString attribute)
+{
+    QDomNodeList items = root.elementsByTagName(tag);
+    QString element = "";
+    for (int i = 0; i < items.count(); i++)
+    {
+        QDomNode itemnode = items.at(i);
+        if (itemnode.isElement())
+        {
+            QDomElement item = itemnode.toElement();
+            element = item.attribute(attribute);
+        }
+    }
+    return element;
 }

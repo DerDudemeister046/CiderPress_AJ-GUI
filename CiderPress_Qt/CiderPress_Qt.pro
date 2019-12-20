@@ -2,7 +2,7 @@ QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++11 console
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -18,14 +18,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     ciderpress_gui.cpp \
+    md5_generator.cpp \
+    settings_widget.cpp \
     xml_manager.cpp
 
 HEADERS += \
     ciderpress_gui.h \
+    md5_generator.h \
+    settings_widget.h \
     xml_manager.h
 
 FORMS += \
-    ciderpress_gui.ui
+    ciderpress_gui.ui \
+    settings_widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
