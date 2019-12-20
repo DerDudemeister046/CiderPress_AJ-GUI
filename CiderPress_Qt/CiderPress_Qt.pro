@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     ciderpress_gui.cpp \
+    md5_generator.cpp \
     settings_widget.cpp \
     xml_manager.cpp
 
 HEADERS += \
     ciderpress_gui.h \
+    md5_generator.h \
     settings_widget.h \
     xml_manager.h
 
