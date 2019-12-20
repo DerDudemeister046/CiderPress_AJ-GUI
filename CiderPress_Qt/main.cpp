@@ -12,9 +12,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //CiderPress_Gui w;
-    //w.show();
-    Settings_Widget *sw = new Settings_Widget;
-    sw->show();
+    CiderPress_Gui w;
+    w.show();
     return a.exec();
 }

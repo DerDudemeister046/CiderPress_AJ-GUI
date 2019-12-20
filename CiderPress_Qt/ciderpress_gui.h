@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "settings_widget.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class CiderPress_Gui; }
 QT_END_NAMESPACE
@@ -17,5 +19,6 @@ public:
 
 private:
     Ui::CiderPress_Gui *ui;
+    Settings_Widget *settings;
 };
 #endif // CIDERPRESS_GUI_H
