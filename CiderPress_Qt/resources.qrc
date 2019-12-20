@@ -3,5 +3,7 @@
         <file>resources/icons/server_icon.png</file>
         <file>resources/icons/download_icon.png</file>
         <file>resources/icons/upload_icon.png</file>
+        <file>resources/icons/search_icon.png</file>
+        <file>resources/icons/settings_icon.png</file>
     </qresource>
 </RCC>
