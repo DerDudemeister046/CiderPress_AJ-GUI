@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>download_widget</class>
+ <widget class="QWidget" name="download_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>756</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTreeWidget" name="treeWidget">
+     <column>
+      <property name="text">
+       <string>Dateiname</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Größe</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Fertiggestellt</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Geschwindigkeit</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Fortschritt</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Verbleibend</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Verbleibende Zeit</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Quellen</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>PowerDL</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Status</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
