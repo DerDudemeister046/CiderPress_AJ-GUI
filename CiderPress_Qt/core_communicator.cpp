@@ -3,11 +3,21 @@
 Core_Communicator::Core_Communicator()
 {
     qDebug() << "Core Communicator loaded...";
-
+    coreCommunicationStart();
+    qDebug() << "Core communication started...";
 }
 
-bool Core_Communicator::coreCommunicationStart()
+QString Core_Communicator::getSessionID()
 {
-    bool x  = false;
-    return x;
+    return sessionID;
+}
+
+void Core_Communicator::setSessionID(QString sessionID)
+{
+    this->sessionID = sessionID;
+}
+
+void Core_Communicator::coreCommunicationStart()
+{
+    get(getSessionID_URL());
 }

@@ -12,7 +12,14 @@ class Core_Communicator : public XML_Manager, public URL_Generator, public Reque
 {
 public:
     Core_Communicator();
-    bool coreCommunicationStart();
+    // GET-Methods
+    QString getSessionID();
+    // SET-Methods
+    void setSessionID(QString sessionID);
+    // Class functions
+    void coreCommunicationStart();
+private:
+    QString sessionID;
 };
 
 #endif // CORE_COMMUNICATOR_H

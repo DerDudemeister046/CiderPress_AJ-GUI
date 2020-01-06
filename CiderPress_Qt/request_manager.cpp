@@ -10,11 +10,39 @@ Request_Manager::Request_Manager(QObject *parent) : QObject(parent)
     connect(&manager,&QNetworkAccessManager::sslErrors,this,&Request_Manager::sslErrors);
 }
 
+QString Request_Manager::getServerReply()
+{
+    return this->serverReply;
+}
+
+void Request_Manager::setServerReply(QByteArray serverReply)
+{
+    //this->serverReply = QTextCodec::codecForMib(106)->toUnicode(serverReply);
+    this->serverReply = QString::fromStdString(serverReply.toStdString());
+}
+
 void Request_Manager::get(QString location)
 {
     qDebug() << "Getting from server...";
     QNetworkReply* reply = manager.get(QNetworkRequest(QUrl(location)));
     connect(reply, &QNetworkReply::readyRead,this,&Request_Manager::readyRead);
+    //QNetworkReply* reply = manager.get(QNetworkRequest(QUrl(location)));
+    //QByteArray read = reply->readAll();
+
+    //qDebug() << "REPLY: " << reply->readAll();
+
+    /*QObject::connect(reply, &QNetworkReply::finished, [&]()
+    {
+        QByteArray read = reply->readAll();
+        QFile out(filename);
+        out.open(QIODevice::WriteOnly|QIODevice::Text);
+        out.write(read);
+        out.close();
+        reply->close();
+        reply->deleteLater();
+    });
+    */
+
 }
 
 void Request_Manager::post(QString location, QByteArray data)
@@ -34,7 +62,14 @@ void Request_Manager::readyRead()
     QNetworkReply *reply = qobject_cast<QNetworkReply*>(sender());
     if(reply)
     {
-        qDebug() << reply->readAll();
+        QByteArray a = reply->readAll();
+        qDebug() << "Setting server reply...";
+        setServerReply(a);
+        qDebug() << "SRV_REPLY: " << getServerReply();
+        QFile out("out.xml");
+        out.open(QIODevice::WriteOnly|QIODevice::Text);
+        out.write(a);
+        out.close();
     }
 }
 
@@ -53,8 +88,7 @@ void Request_Manager::encrypted(QNetworkReply *reply)
 
 void Request_Manager::finished(QNetworkReply *reply)
 {
-    Q_UNUSED(reply)
-    qDebug() << "finished";
+    qDebug() << "XXX finished";
 }
 
 void Request_Manager::networkAccessibleChanged(QNetworkAccessManager::NetworkAccessibility accessible)

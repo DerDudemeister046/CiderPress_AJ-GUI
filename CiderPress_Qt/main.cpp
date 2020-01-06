@@ -19,14 +19,12 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     //Settings_Reader *sr = new Settings_Reader;
     //qDebug() << "HOST: " << sr->readHost() << ":" << sr->readPort();
-    URL_Generator *url = new URL_Generator;
+    //URL_Generator *url = new URL_Generator;
     //url->getSessionID_URL();
     //url->getInformationURL();
 
     Core_Communicator *cc = new Core_Communicator;
-
-    Request_Manager *rm = new Request_Manager;
-    rm->get(url->getSessionID_URL());
+    //cc->coreCommunicationStart();
     //    CiderPress_Gui w;
     //    w.show();
     return a.exec();
