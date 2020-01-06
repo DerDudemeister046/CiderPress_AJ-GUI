@@ -4,9 +4,12 @@
 #include <QObject>
 #include <QDebug>
 
+#include "settings_reader.h"
+
 class URL_Generator
 {
 private:
+    Settings_Reader *settings;
     QString host;   // host to get XML File from
     QString port;   // port to communicate with host
     QString pwd;    // password as md5 hash
