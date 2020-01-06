@@ -1,4 +1,4 @@
-QT       += core gui xml
+QT       += core gui xml network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,21 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    core_communicator.cpp \
     download_widget.cpp \
     main.cpp \
     ciderpress_gui.cpp \
     md5_generator.cpp \
+    request_manager.cpp \
     settings_reader.cpp \
     settings_widget.cpp \
+    timestamp_generator.cpp \
     url_generator.cpp \
     xml_manager.cpp
 
 HEADERS += \
     ciderpress_gui.h \
+    core_communicator.h \
     download_widget.h \
     md5_generator.h \
+    request_manager.h \
     settings_reader.h \
     settings_widget.h \
+    timestamp_generator.h \
     url_generator.h \
     xml_manager.h
 

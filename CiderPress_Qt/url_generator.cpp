@@ -1,6 +1,8 @@
 #include "url_generator.h"
 URL_Generator::URL_Generator()
 {
+    qDebug() << "TIMESTAMP: " << timestamp->getTimestamp();
+
     this->table = "/xml/getobject";
 
     this->host = settings->readHost();
@@ -84,5 +86,15 @@ QString URL_Generator::getSessionID_URL()
     QString url = "http://";
     url += getHost() + ":" + getPort() + "/xml/getsession.xml?password=" + getPWD();
     qDebug() << "SessionID_URL: " << url;
+    return url;
+}
+
+QString URL_Generator::getModified_URL(QString sessionID, QString filter, uint timestamp)
+{
+    QString url = "http://";
+    url += getHost() + ":" + getPort() + "/xml/modified.xml?password=" + getPWD()
+            + "&session=" + sessionID + "&timestamp=" + QString::number(timestamp)
+            + "&filter=" + filter;
+    qDebug() << "Modified_URL: " << url;
     return url;
 }

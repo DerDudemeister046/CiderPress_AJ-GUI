@@ -5,13 +5,14 @@
 
 
 
+#include "core_communicator.h"
 
-#include "url_generator.h"
-#include "settings_reader.h"
 #include <QDebug>
 
 
 #include "xml_manager.h"
+#include "request_manager.h"
+#include "url_generator.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,10 +20,14 @@ int main(int argc, char *argv[])
     //Settings_Reader *sr = new Settings_Reader;
     //qDebug() << "HOST: " << sr->readHost() << ":" << sr->readPort();
     URL_Generator *url = new URL_Generator;
-    url->getSessionID_URL();
-    url->getInformationURL();
+    //url->getSessionID_URL();
+    //url->getInformationURL();
 
+    Core_Communicator *cc = new Core_Communicator;
+
+    Request_Manager *rm = new Request_Manager;
+    rm->get(url->getSessionID_URL());
     //    CiderPress_Gui w;
-//    w.show();
+    //    w.show();
     return a.exec();
 }
