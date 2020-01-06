@@ -73,7 +73,6 @@ void Settings_Widget::loadSettings()
     ui->temp_down_le->setText(readChild(rt,"directories","temp"));
     ui->finished_down_le->setText(readChild(rt,"directories", "complete"));
     ui->upload_le->setText(readChild(rt,"directories", "upload"));
-
 }
 
 

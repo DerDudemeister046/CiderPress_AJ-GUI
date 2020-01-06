@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     ciderpress_gui.cpp \
     md5_generator.cpp \
+    settings_reader.cpp \
     settings_widget.cpp \
     url_generator.cpp \
     xml_manager.cpp
@@ -28,6 +29,7 @@ HEADERS += \
     ciderpress_gui.h \
     download_widget.h \
     md5_generator.h \
+    settings_reader.h \
     settings_widget.h \
     url_generator.h \
     xml_manager.h

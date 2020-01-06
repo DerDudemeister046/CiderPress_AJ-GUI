@@ -1,4 +1,11 @@
 #include "url_generator.h"
+URL_Generator::URL_Generator()
+{
+    this->host = "127.0.0.1";
+    this->port = "9851";
+    this->pwd = "1234567890abcdefghijklmnop0987654321";
+    this->table = "/xml/getobject";
+}
 
 URL_Generator::URL_Generator(QString host, QString port, QString pwd, QString table)
 {

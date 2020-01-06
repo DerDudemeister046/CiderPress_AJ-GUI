@@ -12,6 +12,7 @@ private:
     QString pwd;    // password as md5 hash
     QString table;  // table to get from core
 public:
+    URL_Generator();
     URL_Generator(QString host, QString port, QString pwd, QString table);
     // GET-Methods
     QString getHost();
@@ -26,7 +27,6 @@ public:
     // Class Functions
     QString getInformationURL();
     QString getSessionID_URL();
-
 };
 
 #endif // URL_GENERATOR_H
