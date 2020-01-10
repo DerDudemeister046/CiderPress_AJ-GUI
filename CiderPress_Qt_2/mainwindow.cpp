@@ -6,6 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    serverWidget = new Server_Widget();
+
+    ui->mdiArea->tileSubWindows();
+    serverWidget->setWindowFlag(Qt::FramelessWindowHint);
+    ui->mdiArea->addSubWindow(serverWidget);
+
     //Server_Widget *s = new Server_Widget(this);
     //ui->centralwidget->layout()->addWidget(s);
 }
@@ -19,3 +25,7 @@ void MainWindow::setnew()
 {
 }
 
+
+void MainWindow::on_server_btn_clicked()
+{
+}

@@ -17,6 +17,8 @@ public:
     explicit Settings_Widget(QWidget *parent = nullptr);
     ~Settings_Widget();
 private:
+    void save(QString group, QString section, QString value);
+    void load(QString group, QString section);
     void saveSettings();
     void loadSettings();
 private slots:

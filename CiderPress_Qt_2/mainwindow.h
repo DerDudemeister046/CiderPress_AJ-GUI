@@ -20,6 +20,9 @@ public:
 
     void setnew();
 
+private slots:
+    void on_server_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
     Server_Widget *serverWidget;

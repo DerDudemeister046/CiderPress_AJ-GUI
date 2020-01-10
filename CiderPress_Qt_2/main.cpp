@@ -2,6 +2,8 @@
 #include <QApplication>
 
 //-----
+#include <QSettings>
+#include <QDebug>
 #include "server_widget.h"
 #include "settings_widget.h"
 

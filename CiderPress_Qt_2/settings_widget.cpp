@@ -13,6 +13,26 @@ Settings_Widget::~Settings_Widget()
     delete ui;
 }
 
+void Settings_Widget::save(QString group, QString section, QString value)
+{
+    qDebug() << "SMG:->\tSaving file.";
+
+    QSettings settings("CiderPress", "Settings-Widget");
+    settings.beginGroup(group);
+    settings.setValue(section,value);
+    settings.endGroup();
+}
+
+void Settings_Widget::load(QString group, QString section)
+{
+    qDebug() << "SMG:->\tLoading file.";
+    QSettings settings("CiderPress", "Settings-Widget");
+    settings.beginGroup(group);
+    qDebug() << "SMG:->\tLoaded value:\n";
+    qDebug() << "SMG:->\t\tHOST:\t" << settings.value(section).toString();
+    settings.endGroup();
+}
+
 void Settings_Widget::saveSettings()
 {
     qDebug() << "SMG:->\tSaving file.";
@@ -42,18 +62,25 @@ void Settings_Widget::loadSettings()
 void Settings_Widget::on_ok_btn_clicked()
 {
     qDebug() << "SMG:->\tOK button clicked.";
-    saveSettings();
+    save("CoreSettings","CoreHost",ui->host_le->text());
+    save("CoreSettings","CorePort",ui->port_le->text());
+    save("CoreSettings","CorePWD",ui->pwd_le->text());
 }
 
 void Settings_Widget::on_cancel_btn_clicked()
 {
     qDebug() << "SMG:->\tCancel button clicked.";
-    loadSettings();
+
+    load("CoreSettings","CoreHost");
+    load("CoreSettings","CorePort");
+    load("CoreSettings","CorePWD");
 }
 
 void Settings_Widget::on_apply_btn_clicked()
 {
     qDebug() << "SMG:->\tApply button clicked.";
-    saveSettings();
+    save("CoreSettings","CoreHost",ui->host_le->text());
+    save("CoreSettings","CorePort",ui->port_le->text());
+    save("CoreSettings","CorePWD",ui->pwd_le->text());
     this->close();
 }
