@@ -6,9 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Server_Widget *s = new Server_Widget(this);
-    ui->centralwidget->layout()->addWidget(s);
-
+    //Server_Widget *s = new Server_Widget(this);
+    //ui->centralwidget->layout()->addWidget(s);
 }
 
 MainWindow::~MainWindow()
