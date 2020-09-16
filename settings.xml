@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<client>
+	<nick>YodasPriest</nick>
+	<port>1124</port>
+	<xmlport>9851</xmlport>
+	<autoconnect>true</autoconnect>
+	<maxupload>1048576</maxupload>
+	<maxdownload>0</maxdownload>
+	<maxconnections>1500</maxconnections>
+	<maxsourcesperfile>5000</maxsourcesperfile>
+	<speedperslot>63</speedperslot>
+	<maxnewconnectionsperturn>150</maxnewconnectionsperturn>
+	<incomingdirectory>/mnt/data/ajdownload/</incomingdirectory>
+	<temporarydirectory>/home/stuxadmin/appleJuice/temp/</temporarydirectory>
+	<password>f68be8ffac4695ad6a821d4113d84ba3</password>
+	<share>
+		<directory name="/mnt/data/ajdownload" sharemode="subdirectory"/>
+		<directory name="/mnt/data/ajshare" sharemode="subdirectory"/>
+		<directory name="/home/stuxadmin/appleJuice/incoming" sharemode="subdirectory"/>
+	</share>
+</client>

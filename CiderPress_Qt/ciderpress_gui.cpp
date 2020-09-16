@@ -12,11 +12,7 @@ CiderPress_Gui::CiderPress_Gui(QWidget *parent)
     sw->setWidget(settings);
     sw->setAttribute(Qt::WA_DeleteOnClose);
     ui->mdiArea->addSubWindow(sw);
-
-
-
     ui->mdiArea->tileSubWindows();
-
     //setCentralWidget(settings);
 }
 
